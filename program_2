@@ -1,0 +1,23 @@
+// automorphic number
+
+import java.util.Scanner;
+
+public class automorphic {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int sqr=n*n;
+        int temp=n;
+
+        while(n>0){
+            if (temp%10!=sqr%10){
+             System.out.print("not a morfic number");
+             return;
+            }
+            temp/=10;
+            sqr/=10;
+
+        }
+
+    }
+}

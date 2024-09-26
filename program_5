@@ -1,0 +1,49 @@
+// matrix multiplication
+
+import java.util.Scanner;
+
+public class matrixmul {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int row1, row2, col1, col2;
+        System.out.println("Enter the 1st row value");
+        row1 = sc.nextInt();
+        System.out.println("Enter the 1st coloum value");
+        col1 = sc.nextInt();
+        System.out.println("Enter the 2nd row value");
+        row2 = sc.nextInt();
+        System.out.println("Enter the 2nd colum value");
+        col2 = sc.nextInt();
+        if (col1 != row2) {
+            System.out.println("erorrrr");
+        }else {
+            int[][] a = new int[row1][col1];
+            int[][] b = new int[row2][col2];
+            int[][] c = new int[row1][col2];
+            System.out.println("enter the values of 1st matrix");
+            for (int i = 0; i < row1; i++) {
+                for (int j = 0; j < col1; j++) {
+                    a[i][j] = sc.nextInt();
+                }
+            }
+            System.out.println("entr vales of 2nd matrix");
+            for (int i = 0; i < row2; i++) {
+                for (int j = 0; j < col2; j++) {
+                    b[i][j] = sc.nextInt();
+                }
+            }
+            System.out.println("important part of matrix multiplication");
+            for (int i = 0; i < row1; i++) {
+                for (int j = 0; j < col2; j++) {
+                    c[i][j]=0;
+                    for (int k=0; k<col1; k++){
+                        c[i][j]=c[i][j]+a[i][k]  *  b[k][j];
+                    }
+                    System.out.print(c[i][j]+" ");
+
+                }
+                System.out.println(" ");
+            }
+        }
+    }
+}
